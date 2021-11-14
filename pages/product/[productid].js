@@ -1,7 +1,5 @@
-import path from 'path';
-import fs from 'fs/promises';
-
-import { Fragment} from "react";
+// import path from 'path';
+// import fs from 'fs/promises';
 
 function ProductDetailPage(props) {
     if(!props.loadedProduct) {
@@ -16,9 +14,17 @@ function ProductDetailPage(props) {
 
 async function getData() {
     console.log('getData');
-    const filePath = path.join(process.cwd(), 'data', 'dummy-products.json');
-    const jsonData = await fs.readFile(filePath);
-    const data = JSON.parse(jsonData);
+    // const filePath = path.join(process.cwd(), 'data', 'dummy-products.json');
+    // const jsonData = await fs.readFile(filePath);
+    // const data = JSON.parse(jsonData);
+
+     var data = {
+        products: [
+        {id: "1", title: "Product 1"},
+        {id: "2", title: "Product 2"},
+        {id: "3", title: "Product 3"}
+        ]
+    };
 
     return data;
 }
